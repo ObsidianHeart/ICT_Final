@@ -41,8 +41,6 @@ class _ProfilePageState extends State<ProfilePage> {
     super.initState();
     //getUserData();
   }
-
-  //UserDataModel userDataModel = UserDataModel(name: _name, email: _email, uid: uid, phoneNo: _phoneNo);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +48,7 @@ class _ProfilePageState extends State<ProfilePage> {
         padding: const EdgeInsets.symmetric(vertical:100.0),
         child: Center(
           child: buildCard(
-              "Profile", _name  , _phoneNo , _email , Colors.teal), //line 42
+              "Profile", _name  , _phoneNo , _email , Colors.teal),
         ),
       ),
     );
@@ -84,7 +82,6 @@ Widget buildCard(
               CircleAvatar(
                 radius: 40.0,
                 backgroundColor: Colors.blueGrey,
-                //backgroundImage: AssetImage(imagePath),
               ),
               SizedBox(width: 16.0),
               Column(
@@ -123,23 +120,4 @@ Widget buildCard(
   );
 
 }
-
-
-// Future<void> getUserDataFromFireStoreDataBase() async {
-//   try {
-//
-//     String uid = FirebaseAuth.instance.currentUser!.uid;
-//
-//     await FirebaseFirestore.instance
-//         .collection('users')
-//         .doc(uid)
-//         .get()
-//         .then((value) {
-//        UserDataModel.fromDoc(value);
-//     });
-//   } catch (error) {
-//     'Error: $error';
-//   }
-// }
-
 
